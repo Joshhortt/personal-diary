@@ -152,23 +152,44 @@ app.post("/compose", function(_req, res){
 
 // 18. format storedTitle, add lodash. Test with if else statement
 
+// app.get("/posts/:postName", function(_req, res){
+//   const requestedTitle = _.lowerCase(_req.params.postName);
+
+//   posts.forEach(function(post){
+//     const storedTitle = _.lowerCase(post.title);
+//     if (storedTitle === requestedTitle) {
+//      console.log("Match found!");
+      
+//     } else {
+//       console.log("Match not found!");
+//     }
+
+//   });
+
+// });
+
+// 18. END
+
+//###############################################################
+
+// 19. add tags to post.ejs and pass variables through post.ejs
+
 app.get("/posts/:postName", function(_req, res){
   const requestedTitle = _.lowerCase(_req.params.postName);
 
   posts.forEach(function(post){
     const storedTitle = _.lowerCase(post.title);
     if (storedTitle === requestedTitle) {
-     console.log("Match found!");
-      
-    } else {
-      console.log("Match not found!");
-    }
+      res.render("post", {
+        title: post.title,
+        content: post.content
+      });
+  }
 
   });
-
 });
 
-// 18. END
+// 19. END
 
 //###############################################################
 
