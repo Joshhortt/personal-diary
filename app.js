@@ -23,7 +23,7 @@ app.use(express.static("public"));
 
 //###############################################################
 
-// 2. 
+// 2. Passing p text using key value pair
 // app.get("/", function(_req, res) {
 //   res.render("home, {key: value}")
 //   });
@@ -32,7 +32,7 @@ app.use(express.static("public"));
     res.render("home", {startingContent: homeStartingContent})
     });
 
-// 2. 
+// 2. END
 
 
 
