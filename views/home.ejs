@@ -16,18 +16,19 @@
 <!-- <% console.log(posts); %> -->
 <!-- 12. END -->  
 
-<!-- 13. 14. 15. Add for Each when posts increase-->
+<!-- 13. 14. 15. 20. Add for Each when posts increase / use trunkate string down to 100 words-->
 
 <% posts.forEach(function(post){ %>
     <h1><%=post.title%></h1>
+    
     <p>
         <%=post.content.substring(0,100)+"..."%>
-        <a href="/posts/<%=post.title%>">Read More.</a>
     </p>
+
 <% }); %>
 
 
-<!-- 13. 14. 15. END -->  
+<!-- 13. 14. 15. 20. END -->  
 
 
 <!-- 3. & 4. Add footer / add new footer path inside partials-->

@@ -174,6 +174,27 @@ app.post("/compose", function(_req, res){
 
 // 19. add tags to post.ejs and pass variables through post.ejs
 
+// app.get("/posts/:postName", function(_req, res){
+//   const requestedTitle = _.lowerCase(_req.params.postName);
+
+//   posts.forEach(function(post){
+//     const storedTitle = _.lowerCase(post.title);
+//     if (storedTitle === requestedTitle) {
+//       res.render("post", {
+//         title: post.title,
+//         content: post.content
+//       });
+//   }
+
+//   });
+// });
+
+// 19. END
+
+//###############################################################
+
+// 20. 
+
 app.get("/posts/:postName", function(_req, res){
   const requestedTitle = _.lowerCase(_req.params.postName);
 
@@ -189,7 +210,7 @@ app.get("/posts/:postName", function(_req, res){
   });
 });
 
-// 19. END
+// 20. END
 
 //###############################################################
 
