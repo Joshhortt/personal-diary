@@ -15,6 +15,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+// 10. add posts variable
+let posts = [];
+// 10. END
+
 // 1. Render home.ejs
 // app.get("/", function(_req, res) {
 // res.render("home,")
@@ -60,19 +64,28 @@ app.get("/compose", function(_req, res) {
 
 //###############################################################
 
-// 8. Add post method
+// // 8. Add post method
 
-app.post("/compose", function(_req, res) {
-  console.log(_req.body.postTitle);
-});
+// app.post("/compose", function(_req, res) {
+//   console.log(_req.body.postTitle);
+// });
 
-// 8. END
+// // 8. END
 
 //###############################################################
 
+// 10. Create object
 
+app.post("/compose", function(_req, res){
+  const post = {
+    title: _req.body.postTitle,
+    content: _req.body.postBody
+  };
 
+});
 
-app.listen(5000, function() {
-  console.log("Server started on port 5000");
+// 10. END
+
+app.listen(4000, function() {
+  console.log("Server started on port 4000");
 });
