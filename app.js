@@ -15,9 +15,9 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
-// 10. add posts variable
+// 11. add global variable with empty array + redirect to root route
 let posts = [];
-// 10. END
+// 11. END
 
 // 1. Render home.ejs
 // app.get("/", function(_req, res) {
@@ -34,6 +34,7 @@ let posts = [];
 
   app.get("/", function(_req, res) {
     res.render("home", {startingContent: homeStartingContent});
+    console.log(posts);
     });
 
 // 2. END
@@ -74,17 +75,38 @@ app.get("/compose", function(_req, res) {
 
 //###############################################################
 
-// 10. Create object
+// // 10. Create object
+
+// app.post("/compose", function(_req, res){
+//   const post = {
+//     title: _req.body.postTitle,
+//     content: _req.body.postBody
+//   };
+
+// });
+
+// // 10. END
+
+//###############################################################
+
+// 11. add global variable with empty array + redirect to root route
 
 app.post("/compose", function(_req, res){
   const post = {
     title: _req.body.postTitle,
     content: _req.body.postBody
   };
+  // adding posts array + push method
+  posts.push(post);
+  res.redirect("/");
 
 });
 
-// 10. END
+// 11. END
+
+//###############################################################
+
+
 
 app.listen(4000, function() {
   console.log("Server started on port 4000");
