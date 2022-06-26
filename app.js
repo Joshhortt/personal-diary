@@ -150,7 +150,7 @@ app.post("/compose", function(_req, res){
 
 //###############################################################
 
-// 18.
+// 18. format storedTitle, add lodash. Test with if else statement
 
 app.get("/posts/:postName", function(_req, res){
   const requestedTitle = _.lowerCase(_req.params.postName);
