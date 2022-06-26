@@ -50,10 +50,13 @@ app.get("/contact", function(_req, res){
 
 //###############################################################
 
+// 7. render compose page using key value pair 
 
+app.get("/compose", function(_req, res) {
+  res.render("compose");
+});
 
-
-
+// 7. END
 
 
 
