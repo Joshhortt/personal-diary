@@ -58,9 +58,15 @@ app.get("/compose", function(_req, res) {
 
 // 7. END
 
+//###############################################################
 
+// 8. Add post method
 
+app.post("/compose", function(_req, res) {
+  console.log(_req.body.postTitle);
+});
 
+// 8. END
 
 app.listen(5000, function() {
   console.log("Server started on port 5000");
