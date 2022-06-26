@@ -16,10 +16,23 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 // 1. Render home.ejs
-app.get("/", function(_req, res) {
-res.render("home")
-});
-// 1.END
+// app.get("/", function(_req, res) {
+// res.render("home,")
+// });
+// 1. END
+
+//###############################################################
+
+// 2. 
+// app.get("/", function(_req, res) {
+//   res.render("home, {key: value}")
+//   });
+
+  app.get("/", function(_req, res) {
+    res.render("home", {startingContent: homeStartingContent})
+    });
+
+// 2. 
 
 
 
