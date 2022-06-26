@@ -118,8 +118,15 @@ app.post("/compose", function(_req, res){
 
 //###############################################################
 
+// 16. Add express routing parameters
+
+app.get("/posts/:postName", function(_req, res){
+  console.log(_req.params.postName);
+});
 
 
-app.listen(8000, function() {
-  console.log("Server started on port 8000");
+
+
+app.listen(3000, function() {
+  console.log("Server started on port 3000");
 });
