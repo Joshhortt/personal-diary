@@ -29,13 +29,26 @@ app.use(express.static("public"));
 //   });
 
   app.get("/", function(_req, res) {
-    res.render("home", {startingContent: homeStartingContent})
+    res.render("home", {startingContent: homeStartingContent});
     });
 
 // 2. END
 
+//###############################################################
 
+// 5. render about and contact pages using key value pair
 
+app.get("/about", function(_req, res){
+  res.render("about", {aboutContent: aboutContent});
+});
+ 
+app.get("/contact", function(_req, res){
+  res.render("contact", {contactContent: contactContent});
+});
+
+// 5. END
+
+//###############################################################
 
 
 
