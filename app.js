@@ -32,12 +32,24 @@ let posts = [];
 //   res.render("home, {key: value}")
 //   });
 
-  app.get("/", function(_req, res) {
-    res.render("home", {startingContent: homeStartingContent});
-    console.log(posts);
-    });
+  // app.get("/", function(_req, res) {
+  //   res.render("home", {startingContent: homeStartingContent});
+  //   });
 
 // 2. END
+
+//###############################################################
+
+// 12.  add another key value pair + passing in the posts array
+
+  app.get("/", function(_req, res) {
+    res.render("home", {
+      startingContent: homeStartingContent,
+      posts: posts
+      });
+    });
+
+// 12. END
 
 //###############################################################
 
@@ -108,6 +120,6 @@ app.post("/compose", function(_req, res){
 
 
 
-app.listen(4000, function() {
-  console.log("Server started on port 4000");
+app.listen(8000, function() {
+  console.log("Server started on port 8000");
 });
