@@ -120,11 +120,33 @@ app.post("/compose", function(_req, res){
 
 // 16. Add express routing parameters
 
+// app.get("/posts/:postName", function(_req, res){
+//   console.log(_req.params.postName);
+// });
+
+// 16. END
+
+//###############################################################
+
+// 17. add post title match found for testing loop throug posts array
+
 app.get("/posts/:postName", function(_req, res){
-  console.log(_req.params.postName);
+  const requestedTitle = _req.params.postName;
+
+  posts.forEach(function(post){
+    const storedTitle = post.title;
+    if (storedTitle === requestedTitle) {
+     console.log("Match found!");
+      
+    }
+
+  });
+
 });
 
+// 17. END
 
+//###############################################################
 
 
 app.listen(3000, function() {
